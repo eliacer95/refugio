@@ -1,0 +1,60 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                {{ form.non_field_errors }}
+                <div class="form-group">
+                    <label> {{ form2.nombre.label }}</label>
+                    {{form2.nombre}}
+
+                </div>
+                <div class="form-group">
+                    <label> {{ form2.apellidos.label }}</label>
+                    {{form2.apellidos}}
+
+                </div>
+                <div class="form-group">
+                    <label> {{ form2.edad.label }}</label>
+                    {{form2.edad}}
+
+                    {% if form.errors %}
+                        <strong>{{ form2.edad.errors }}</strong>
+                    {% endif %}
+
+                </div>
+                <div class="form-group">
+                    <label> {{ form2.telefono.label }}</label>
+                    {{form2.telefono}}
+
+                </div>
+                <div class="form-group">
+                    <label> {{ form2.email_field.label }}</label>
+                    {{form2.email_field}}
+
+                </div>
+                <div class="form-group">
+                    <label> {{ form2.domicilio.label }}</label>
+                    {{form2.domicilio}}
+
+                </div>
+                <div class="form-group">
+                    <label> {{ form.numero_mascotas.label }}</label>
+                    {{form.numero_mascotas}}
+
+                </div>
+                <div class="form-group">
+                    <label> {{ form.razones.label }}</label>
+                    {{form.razones}}
+
+                </div>
+                <div class="form-group">
+                    <button type="submit">Guardar</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+{% endblock %}
